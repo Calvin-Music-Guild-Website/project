@@ -180,16 +180,11 @@ app.post('/signup', function(req, res){
   var password_confirmation = req.body.password_confirmation;
   
   createUser(username, password, password_confirmation, function(err, user){
-    if (err) {
-      res.render('signup', {error: err});
-    } else {
-      
       // This way subsequent requests will know the user is logged in.
       req.session.username = user.username;
       
       res.redirect('/');  
-    }
-  });
+});
 });
 
 // This finds a user matching the username and password that
