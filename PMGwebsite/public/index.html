@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="//code.jquery.com/jquery-latest.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="scripts/jquery.js"></script>
+    <title>Pop Music Guild</title>
+  </head>
+    
+  <body>
+      
+<section id="header">
+    <h1 id="page-title">Pop Music Guild</h1>
+    	<nav>
+		<ul>
+			<li><a class="active" href="index.html">Home</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Artises</a>   
+                <div class="dropdown-content">
+                  <a href="#">Adele</a>
+                  <a href="#">Kanye West</a>
+                  <a href="#">Frank Boye</a>
+                  <a href="#">Beyoncé</a>
+                </div>
+             </li>
+			<li><a href="#">Photos</a></li>
+			<li><a href="#">Contact</a></li>
+            <li><a href="about.html">About</a></li> 
+            <li style="float:right"><button class="button" style="vertical-align:middle" onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><span>Login/Register</span></button></li> 
+        </ul>
+	</nav>
+</section>
+
+    <div class="main-content">
+        <p>
+        Lorem ipsum dolor sit amet, pri tacimates salutatus forensibus ea. Sit ceteros hendrerit
+        consequuntur an, dicta tibique eu vis. Habeo impetus comprehensam te nam, in sit feugait
+        principes. Cibo possit oblique qui cu, aperiri vivendum sed ne. Minim repudiare ne cum,
+        ex graeco quodsi ius.
+        Epicurei constituam sed at, id placerat similique tincidunt eam. Te quas inermis nominavi
+        vel, in sea erant debitis reformidans, an cum eripuit democritum. Usu modus primis et, his
+        errem scripserit cu. Mea cu aperiri repudiandae, id sit offendit noluisse torquatos. Sit
+        te suas fastidii, cum nonumy iriure maluisset at, vix te graeco moderatius argumentum.
+            Lorem ipsum dolor sit amet, pri tacimates salutatus forensibus ea. Sit ceteros hendrerit
+        consequuntur an, dicta tibique eu vis. Habeo impetus comprehensam te nam, in sit feugait
+        principes. Cibo possit oblique qui cu, aperiri vivendum sed ne. Minim repudiare ne cum,
+        ex graeco quodsi ius.
+        Epicurei constituam sed at, id placerat similique tincidunt eam. Te quas inermis nominavi
+        vel, in sea erant debitis reformidans, an cum eripuit democritum. Usu modus primis et, his
+        errem scripserit cu. Mea cu aperiri repudiandae, id sit offendit noluisse torquatos. Sit
+        te suas fastidii, cum nonumy iriure maluisset at, vix te graeco moderatius argumentum.
+            Lorem ipsum dolor sit amet, pri tacimates salutatus forensibus ea. Sit ceteros hendrerit
+        consequuntur an, dicta tibique eu vis. Habeo impetus comprehensam te nam, in sit feugait
+        principes. Cibo possit oblique qui cu, aperiri vivendum sed ne. Minim repudiare ne cum,
+        ex graeco quodsi ius.
+        Epicurei constituam sed at, id placerat similique tincidunt eam. Te quas inermis nominavi
+        vel, in sea erant debitis reformidans, an cum eripuit democritum. Usu modus primis et, his
+        errem scripserit cu. Mea cu aperiri repudiandae, id sit offendit noluisse torquatos. Sit
+        te suas fastidii, cum nonumy iriure maluisset at, vix te graeco moderatius argumentum.
+            Lorem ipsum dolor sit amet, pri tacimates salutatus forensibus ea. Sit ceteros hendrerit
+        consequuntur an, dicta tibique eu vis. Habeo impetus comprehensam te nam, in sit feugait
+        principes. Cibo possit oblique qui cu, aperiri vivendum sed ne. Minim repudiare ne cum,
+        ex graeco quodsi ius.
+        Epicurei constituam sed at, id placerat similique tincidunt eam. Te quas inermis nominavi
+        vel, in sea erant debitis reformidans, an cum eripuit democritum. Usu modus primis et, his
+        errem scripserit cu. Mea cu aperiri repudiandae, id sit offendit noluisse torquatos. Sit
+        te suas fastidii, cum nonumy iriure maluisset at, vix te graeco moderatius argumentum.
+        </p>  
+    </div>   
+    
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate" action="/login" method="post">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+
+    <div class="container">
+      <label><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="username" required><span id="usernameError"></span>
+
+      <label><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="password" required><span id="passwordError"></span>
+        
+      <button type="submit">Login</button>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+    </div>
+  </form>
+
+    <form class="modal-content animate" action="/signup" method="post">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+
+    <div class="container">
+      <label><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="username" required>
+
+      <label><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="password" required>
+        
+        <label><b>Password Confirmation</b></label>
+      <input type="password" placeholder="Confirm Password" name="password_confirmation" required>
+        
+      <button type="submit">Register</button>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+    </div>
+  </form>
+
+</div>
+<script src="scripts/modal_register.js"></script> 
+<script src="scripts/modal_login.js"></script>
+
+    <div class="footer">
+      <p>Copyright © Eventually something fancy will be put here with all those registered icons® and those things  </p>
+    </div>
+   
+  </body>
+</html>
