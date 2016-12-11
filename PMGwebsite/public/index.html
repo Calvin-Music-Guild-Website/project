@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <script src="//code.jquery.com/jquery-latest.min.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="jquery.js"></script>
+    <script src="scripts/jquery.js"></script>
     <title>Pop Music Guild</title>
   </head>
     
@@ -12,7 +12,7 @@
       
 <section id="header">
     <h1 id="page-title">Pop Music Guild</h1>
-	<nav>
+    	<nav>
 		<ul>
 			<li><a class="active" href="index.html">Home</a></li>
             <li class="dropdown">
@@ -27,8 +27,7 @@
 			<li><a href="#">Photos</a></li>
 			<li><a href="#">Contact</a></li>
             <li><a href="about.html">About</a></li> 
-            <li style="float:right"><button class="button" style="vertical-align:middle" onclick="document.getElementById('id02').style.display='block'" style="width:auto;"><span>Register</span></button></li>
-            <li style="float:right"><button class="button" style="vertical-align:middle" onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><span>Login</span></button></li> 
+            <li style="float:right"><button class="button" style="vertical-align:middle" onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><span>Login/Register</span></button></li> 
         </ul>
 	</nav>
 </section>
@@ -77,10 +76,10 @@
 
     <div class="container">
       <label><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="username" required>
+      <input type="text" placeholder="Enter Username" name="username" required><span id="usernameError"></span>
 
       <label><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="password" required>
+      <input type="password" placeholder="Enter Password" name="password" required><span id="passwordError"></span>
         
       <button type="submit">Login</button>
     </div>
@@ -89,12 +88,9 @@
       <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
     </div>
   </form>
-    
-</div>
-    
-<div id="id02" class="modal">
+
     <form class="modal-content animate" action="/signup" method="post">
-      <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
 
     <div class="container">
       <label><b>Username</b></label>
@@ -115,8 +111,8 @@
   </form>
 
 </div>
-<script src="register.js"></script> 
-<script src="login.js"></script>
+<script src="scripts/modal_register.js"></script> 
+<script src="scripts/modal_login.js"></script>
 
     <div class="footer">
       <p>Copyright © Eventually something fancy will be put here with all those registered icons® and those things  </p>

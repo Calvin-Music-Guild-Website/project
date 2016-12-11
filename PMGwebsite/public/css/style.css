@@ -43,6 +43,7 @@ body {
   width: 100%;
 }
 
+
 nav {
 	position: absolute;
 	bottom: 0;
@@ -58,7 +59,7 @@ nav li {
 
 nav li a {
     display: inline-block;
-    padding: 20px;
+    padding: 23px;
 	color: #fff;
     text-decoration: none;
 }
@@ -67,7 +68,7 @@ li a, .dropbtn {
     display: inline-block;
     color: white;
     text-align: center;
-    padding: 14px 16px;
+    padding: 23px;
     text-decoration: none;
 }
 
@@ -102,6 +103,9 @@ li.dropdown {
     display: block;
 }
 
+.active {
+    background-color: #3ab795;
+}
 section {
 	height: 100vh;
 }
@@ -153,13 +157,88 @@ input[type=text], input[type=password] {
 
 /* Set a style for all buttons */
 button {
-    background-color: #4CAF50;
+    position: relative;
+    font-family: 'open-sans-bold'; 
+    font-size: 18px;
+    text-align: center;
+    background-color: #3ab795;
     color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
+    padding: 15px;
+    margin: 20px;
     width: 100%;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+}
+
+.button {
+    background-color: #3ab795;
+    font-size: 16px;
+    text-align: center;
+    display: inline-block;
+    border: none;
+    color: white;
+    padding: 23px;
+    margin: 8px 0;
+    width: auto;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 0.5px;
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+button:hover {
+    background-color: #3ab770;
+    box-shadow: 0 20px 30px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.button:after {
+    content: "";
+    background: #f1f1f1;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px !important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s
+}
+
+.button:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
 }
 
 /* Extra styles for the cancel button */
@@ -169,17 +248,7 @@ button {
     background-color: #f44336;
 }
 
-/* Center the image and position the close button */
-.imgcontainer {
-    text-align: center;
-    margin: 24px 0 12px 0;
-    position: relative;
-}
 
-img.avatar {
-    width: 40%;
-    border-radius: 50%;
-}
 
 .container {
     padding: 16px;

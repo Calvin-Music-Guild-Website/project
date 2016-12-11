@@ -22,7 +22,7 @@ var dbConnection;
 app.use(logger('dev'))
 //app.use(express.static(__dirname + '/static'))
 
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
 
 //mongoStuff
 MongoClient.connect('mongodb://cs336:bjarne@ds151137.mlab.com:51137/cs336', function (err, db) {
@@ -109,12 +109,16 @@ app.use(checkIfLoggedIn);
 app.engine('hbs', expressHbs({textname:'hbs', defaultLayout:'main.hbs'}));
 app.set('view engine', 'hbs');
 
-app.get('/', function(req, res){
-  var coll = mongo.collection('users');
-    coll.find({}).toArray(function(err, users){
-    res.render('index', {users:users});  
-  })
-});
+//app.get('/', function(req, res){
+//  var coll = dbConnection.collection('users');
+//    coll.find({}).toArray(function(err, users){
+//    res.render('index', {users:users});  
+//  })
+//});
+
+//app.get('/', function(req, res){
+//    res.render('/index.html');  
+//});
 
 app.get('/login', function(req, res){
   res.render('login');
@@ -211,8 +215,8 @@ app.post('/login', function(req, res){
 
       res.redirect('/');
     } else {
-//      res.render('login', {badCredentials: true});
-        res.redirect('/about.html')
+      res.render('login', {badCredentials: true});
+//        res.redirect('/about.html')
     }
   });
 });
