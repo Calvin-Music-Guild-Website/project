@@ -165,7 +165,7 @@ button {
     color: white;
     padding: 15px;
     margin: 20px;
-    width: 100%;
+    width: 50%;
     transition: all 0.5s;
     cursor: pointer;
     margin: 5px;
@@ -254,6 +254,16 @@ button:hover {
     padding: 16px;
 }
 
+#containerLogin {
+    background-color: #3ab795;
+    font-size: 16px;
+    text-align: center;
+    display: inline-block;
+    border: none;
+    color: white;
+    font-size: 23px;
+    width: 200px;
+}
 span.psw {
     float: right;
     padding-top: 16px;
