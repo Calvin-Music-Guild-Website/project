@@ -1,3 +1,9 @@
+/*
+ * @author: Jay Bigelow, Frank Boye
+ * @date:   12/11/16
+ *
+ */
+
 var express = require('express')
   , logger = require('morgan')
   , app = express();
@@ -17,7 +23,9 @@ var expressHbs = require('express3-handlebars');
 var MongoStore = require('connect-mongo')(expressSession);
 var bodyParser = require('body-parser');
 var MongoClient = require('mongodb').MongoClient;
+var MongoClient2 = require('mongodb').MongoClient;
 var dbConnection;
+var dbConnection2;
 
 app.use(logger('dev'))
 //app.use(express.static(__dirname + '/static'))
@@ -30,6 +38,15 @@ MongoClient.connect('mongodb://cs336:bjarne@ds151137.mlab.com:51137/cs336', func
   dbConnection = db;
 })
 
+//Set using export MONGO_PASSWORD=password
+var PASSWORD = process.env.MONGO_PASSWORD;
+var mongoURL = 'mongodb://user:' + PASSWORD + '@ds159737.mlab.com:59737/cs336project';
+
+var db2;
+MongoClient2.connect(mongoURL, function(err, dbConnection2) {
+    if (err) throw err;
+    db2 = dbConnection2;
+});
 
 app.set('port', (process.env.PORT || 3000));
 app.use(bodyParser.json());
@@ -140,6 +157,65 @@ app.get('/secret', requireUser, function(req, res){
 
 app.get('/signup', function(req,res){
   res.render('signup');
+});
+
+//Songs code
+app.get('/api/songs', function(req, res) {
+    db2.collection("songs").find({}).toArray(function(err, docs) {
+        if (err) throw err;
+        res.json(docs);
+    });
+});
+
+app.post('/api/songs', function(req, res) {
+    var newSong = {
+        id: Date.now(),
+        title: req.body.title,
+	artist: req.body.artist,
+	lyrics: req.body.lyrics,
+        link: req.body.link,
+    };
+    db2.collection("songs").insertOne(newSong, function(err, result) {
+        if (err) throw err;
+        db2.collection("songs").find({}).toArray(function(err, docs) {
+            if (err) throw err;
+            res.json(docs);
+        });
+    });
+});
+
+app.get('/api/songs/:id', function(req, res) {
+    db2.collection("songs").find({"id": Number(req.params.id)}).toArray(function(err, docs) {
+        if (err) throw err;
+        res.json(docs);
+    });
+});
+
+app.put('/api/songs/:id', function(req, res) {
+    var updateId = Number(req.params.id);
+    var update = req.body;
+    db2.collection('songs').updateOne(
+        { id: updateId },
+        { $set: update },
+        function(err, result) {
+            if (err) throw err;
+            db2.collection("songs").find({}).toArray(function(err, docs) {
+                if (err) throw err;
+                res.json(docs);
+            });
+        });
+});
+
+app.delete('/api/songs/:id', function(req, res) {
+    db2.collection("songs").deleteOne(
+        {'id': Number(req.params.id)},
+        function(err, result) {
+            if (err) throw err;
+            db2.collection("songs").find({}).toArray(function(err, docs) {
+                if (err) throw err;
+                res.json(docs);
+            });
+        });
 });
 
 // This creates a new user and calls the callback with
