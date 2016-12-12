@@ -12,12 +12,17 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   font-family: 'open-sans-bold'; 
   font-size: 18px;
   text-align: center;
 }
 
+#background{
+      background-image: url(../images/manhattanproj.jpg);
+
+}
 @font-face {
     font-family: 'open-sans-bold';
 	src: url('../fonts/open-sans/OpenSans-Bold.eot');
@@ -34,6 +39,7 @@ body {
   font-weight: 200;
   font-size: 80px;
   text-align: center;
+  text-shadow: 2px 2px #3ab795;
   padding: 100px;
   text-transform: uppercase;
   color: #fff;
