@@ -1,4 +1,4 @@
-Immanuel Boye, Jay Bigelow
+Emmanuel Boye, Jay Bigelow
 
 CS 336 Project Proposal
 We are creating a website for Calvin's Pop Music Guild to showcase the artists' work.  In order to achieve this, our website will include:
