@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+  
+<head>
+  <script src="https://unpkg.com/react@15.3.2/dist/react.js"></script>
+  <script src="https://unpkg.com/react-dom@15.3.2/dist/react-dom.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+  <script src="https://npmcdn.com/react-router@2.4.0/umd/ReactRouter.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+  
+  <style>
+  
+  </style>
+</head>
+  
+<body>
+  
+  <div id="container">
+  
+  </div>
+  
+  <script type="text/babel">
+    var { Router,
+          Route,
+          IndexRoute,
+          IndexLink,
+          Link } = ReactRouter;
+    var destination = document.querySelector("#container");
+
+    var App = React.createClass({
+      render: function() {
+        return (
+          <div>
+            <h1>Pop Music Guild</h1>
+            <ul className="header">
+              <li><IndexLink to="/" activeClassName="active">Home</IndexLink></li>
+              <li><Link to="/artiste" activeClassName="active">Artiste</Link></li>
+              <li><Link to="/about" activeClassName="active">About</Link></li>
+              <li><Link to="/contact" activeClassName="active">Contact</Link></li>
+            </ul>
+            <div className="content">
+                {this.props.children}
+            </div>
+          </div>
+        )
+      }
+    });
+
+    var Home = React.createClass({
+      render: function() {
+          return (
+            <div>
+              <h2>HELLO</h2>
+              <p>Cras facilisis urna ornare ex volutpat, et
+              convallis erat elementum. Ut aliquam, ipsum vitae
+              gravida suscipit, metus dui bibendum est, eget rhoncus nibh
+              metus nec massa. Maecenas hendrerit laoreet augue
+              nec molestie. Cum sociis natoque penatibus et magnis
+              dis parturient montes, nascetur ridiculus mus.</p>
+
+              <p>Duis a turpis sed lacus dapibus elementum sed eu lectus.</p>
+            </div>
+          );
+        }
+    });
+
+    var Artiste = React.createClass({
+      render: function() {
+          return (
+            <div>
+              <h2>GOT QUESTIONS?</h2>
+              <p>The easiest thing to do is post on
+              our <a href="http://forum.kirupa.com">forums</a>.
+              </p>
+            </div>
+          );
+        }
+    });
+
+    var Contact = React.createClass({
+      render: function() {
+          return (
+            <div>
+              <h2>GOT QUESTIONS?</h2>
+              <p>The easiest thing to do is post on
+              our <a href="http://forum.kirupa.com">forums</a>.
+              </p>
+            </div>
+          );
+        }
+    });
+    
+
+    var About = React.createClass({
+          render: function() {
+              return (
+                <div>
+                  <h2>HELLO</h2>
+                  <p>Cras facilisis urna ornare ex volutpat, et
+                  convallis erat elementum. Ut aliquam, ipsum vitae
+                  gravida suscipit, metus dui bibendum est, eget rhoncus nibh
+                  metus nec massa. Maecenas hendrerit laoreet augue
+                  nec molestie. Cum sociis natoque penatibus et magnis
+                  dis parturient montes, nascetur ridiculus mus.</p>
+
+                  <p>Duis a turpis sed lacus dapibus elementum sed eu lectus.</p>
+                </div>
+              );
+            }
+        });
+
+
+    ReactDOM.render(
+      <Router>
+        <Route path="/" component={App}>
+            <IndexRoute component={Home}/>
+            <Route path="artiste" component={Artiste} />
+            <Route path="contact" component={Contact} />
+            <Route path="about" component={About} />
+
+        </Route>
+      </Router>,
+      destination
+    );
+  </script>
+</body>
+  
+</html>
