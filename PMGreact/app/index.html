@@ -2,6 +2,7 @@
 <html>
   
 <head>
+    <title>Pop Music Guild</title>
   <script src="https://unpkg.com/react@15.3.2/dist/react.js"></script>
   <script src="https://unpkg.com/react-dom@15.3.2/dist/react-dom.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
@@ -13,13 +14,15 @@
 <body>
   
   <div id="container">
+      <button id="googleButton"> </button>
   </div>
   
   <script type="text/babel">
 
     var { Router,
           Route,
-          IndexRoute,
+          IndexRoute, 
+          browserHistory,
           IndexLink,
           Link } = ReactRouter;
 
@@ -33,7 +36,6 @@
       backgroundImage: 'url(' + imgUrl + ')',
     };
 
-    
     var destination = document.querySelector("#container");
 
     var App = React.createClass({
@@ -50,6 +52,8 @@
                   <li><Link to="/artiste" activeClassName="active">Arstiste</Link></li>
                   <li><Link to="/contact" activeClassName="active">Contact</Link></li>
                   <li><Link to="/about" activeClassName="active">About</Link></li>
+                  <li id="register"><Link to="/register" activeClassName="active">Register</Link></li>
+                  <li id="login"><Link to="/login" activeClassName="active">Login</Link></li>              
              </ul>              
             </Sticky>
             <div className="content">
@@ -139,17 +143,73 @@
             }
         });
 
+    var Login = React.createClass({
+          render: function() {
+              return (
+                <div >
+                  <form action="/login" method="post">
+                      <div className="imgcontainer">
+                      </div>
+
+                      <div className="container">
+                        <label><b>Username</b></label>
+                        <input type="text" placeholder="Enter Username" name="username" required/>
+
+                        <label><b>Password</b></label>
+                        <input type="password" placeholder="Enter Password" name="password" required/>
+
+                        <button type="submit">Login</button>
+                        <input type="checkbox" checked="checked"/> Remember me
+                      </div>
+
+                      <div className="container" id="back">
+                        <button type="button" className="cancelbtn">Cancel</button>
+                        <span className="psw">Forgot <a href="#">password?</a></span>
+                      </div>
+                    </form>
+                </div>
+              );
+            }
+        });
+
+    var Register = React.createClass({
+          render: function() {
+              return (
+                <div >
+                  <form action="/signup" method="post">
+                      <div className="container">
+                        <label><b>Username</b></label>
+                         <input type="text" placeholder="Enter Username" name="username" required/>
+
+                        <label><b>Password</b></label>
+                        <input type="password" placeholder="Enter Password" name="password" required/>
+                          
+                        <label><b>Password Confirmation</b></label>
+                        <input type="password" placeholder="Confirm Password" name="confirm_password" required/>
+
+                        <button type="submit">Register</button>
+                      </div>
+
+                    </form>
+                </div>
+              );
+            }
+        });
+
 
     ReactDOM.render(
-      <Router>
+      <Router history={browserHistory}>
         <Route path="/" component={App}>
             <IndexRoute component={Home}/>
             <Route path="artiste" component={Artiste} />
             <Route path="contact" component={Contact} />
             <Route path="about" component={About} />
+            <Route path="login" component={Login} />
+            <Route path="register" component={Register} />
         </Route>
       </Router>,
       destination
+        
     );
   </script>
 </body>

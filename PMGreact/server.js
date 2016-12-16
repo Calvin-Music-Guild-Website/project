@@ -19,7 +19,7 @@ var dbConnection;
 var dbConnection2;
 
 app.use(logger('dev'))
-app.use(express.static(path.join(__dirname, 'app')));
+app.use('/',express.static(path.join(__dirname, 'app')));
 
 //mongoStuff
 MongoClient.connect('mongodb://cs336:bjarne@ds151137.mlab.com:51137/cs336', function (err, db) {
@@ -112,9 +112,9 @@ app.use(checkIfLoggedIn);
 app.engine('hbs', expressHbs({textname:'hbs', defaultLayout:'main.hbs'}));
 app.set('view engine', 'hbs');
 
-app.get('/login', function(req, res){
-  res.render('login');
-});
+//app.get('/login', function(req, res){
+//  res.render('login');
+//});
 
 app.get('/logout', function(req, res){
   delete req.session.username;
@@ -266,7 +266,7 @@ app.post('/login', function(req, res){
     }
   });
 });
-
+//app.use('*', express.static('app'));
 app.listen(process.env.PORT || 3000, function () {
 console.log('Listening on http://localhost:' + (process.env.PORT || 3000))
 })
