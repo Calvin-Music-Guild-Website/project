@@ -200,15 +200,16 @@ app.delete('/api/songs/:id', function(req, res) {
 // Possible errors: the passwords are not the same, and a user
 // with that username already exists.
 function createUser(username, password, password_confirmation, callback){
-    var coll = dbConnection.collection('users');
-     if (password !== password_confirmation) {
-        var err = 'The passwords do not match';
-        callback(err);
-     }else {
-        var query      = {username:username};
-        var userObject = {username: username, password: password};
-         
-         // make sure this username does not exist already
+  var coll = dbConnection.collection('users');
+  
+  if (password !== password_confirmation) {
+    var err = 'The passwords do not match';
+    callback(err);
+  } else {
+    var query      = {username:username};
+    var userObject = {username: username, password: password};
+    
+    // make sure this username does not exist already
     coll.findOne(query, function(err, user){
       if (user) {
         err = 'The username you entered already exists';
@@ -223,6 +224,7 @@ function createUser(username, password, password_confirmation, callback){
   }
 }
 
+
 app.post('/signup', function(req, res){
   // The 3 variables below all come from the form
   // in views/signup.hbs
@@ -231,11 +233,16 @@ app.post('/signup', function(req, res){
   var password_confirmation = req.body.password_confirmation;
   
   createUser(username, password, password_confirmation, function(err, user){
+    if (err) {
+      res.render('signup', {error: err});
+    } else {
+      
       // This way subsequent requests will know the user is logged in.
       req.session.username = user.username;
       
       res.redirect('/');  
-});
+    }
+  });
 });
 
 // This finds a user matching the username and password that
