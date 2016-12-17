@@ -33,9 +33,6 @@ module.exports = React.createClass({
               {this.props.children}
             </div>
           </StickyContainer>
-        <div className="footer">
-            <p>Copyright © Eventually something fancy will be put here with all those registered icons® and those things  </p>
-        </div>
         </div>
         )
       }

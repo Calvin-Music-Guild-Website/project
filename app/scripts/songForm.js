@@ -32,17 +32,20 @@ module.exports = React.createClass({
     render: function() {
         return (
             <form className="songForm" onSubmit={this.handleSubmit}>
-                <input className="ui-widget ui-corner-all" type="text" placeholder="title..."
+                <div className="titleCont">
+                <input className="titleForm" type="text" placeholder="title..."
                     value={this.state.title} onChange={this.handleTitleChange}
                 />
-                <input className="ui-widget ui-corner-all" type="text" placeholder="artist..."
+                <input className="artisteForm" type="text" placeholder="artist..."
                     value={this.state.artist} onChange={this.handleArtistChange}
                 />
-                <input className="ui-widget ui-corner-all" type="text" placeholder="lyrics..."
-                    value={this.state.lyrics} onChange={this.handleLyricsChange}
-                />
-                <input className="ui-widget ui-corner-all" type="text" placeholder="link..."
+                <input className="linkForm"type="text" placeholder="link..."
                     value={this.state.link} onChange={this.handleLinkChange}
+                />
+                </div>
+
+                <input className="lyricsForm" type="text" placeholder="lyrics..."
+                    value={this.state.lyrics} onChange={this.handleLyricsChange}
                 />
                 <input className="ui-button ui-widget ui-corner-all" type="submit" value="Post" />
             </form>

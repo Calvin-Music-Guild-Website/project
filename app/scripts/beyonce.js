@@ -5,6 +5,15 @@ import BeyonceSongs from './beyonceSongs';
 import SongForm from './songForm';
 import { API_URL, POLL_INTERVAL } from './global';
 
+let imgUrl = '../images/beyonce1.jpg';
+const divStyle = {
+  width: "100%",
+  height: "600px",
+  position: "relative",
+  bottom: "45px",
+  backgroundImage: 'url(' + imgUrl + ')',
+};
+
 module.exports = React.createClass({
     getInitialState: function() {
         return {data: []};
@@ -47,8 +56,8 @@ module.exports = React.createClass({
     },
     render: function() {
         return (
-            <div className="songBox">
-                <h1>Beyoncé's Songs</h1>
+            <div className="songBox" style={divStyle}>
+                <h1 id="beyonceTitle">Beyoncé's Songs</h1>
                 <BeyonceSongs data={this.state.data} />
                 <SongForm onSongSubmit={this.handleSongSubmit} />
             </div>
