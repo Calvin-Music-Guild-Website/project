@@ -1,5 +1,6 @@
 import React from 'react';
 import $ from 'jquery';
+import { Link } from 'react-router';
 
 import BeyonceSongs from './beyonceSongs';
 import SongForm from './songForm';
@@ -56,10 +57,15 @@ module.exports = React.createClass({
     },
     render: function() {
         return (
+<<<<<<< HEAD
             <div className="songBox" style={divStyle}>
                 <h1 id="beyonceTitle">Beyoncé's Songs</h1>
+=======
+            <div className="songBox">
+                <h1>Beyonce</h1>
+>>>>>>> origin/integration
                 <BeyonceSongs data={this.state.data} />
-                <SongForm onSongSubmit={this.handleSongSubmit} />
+                <Link to="/add" activeClassName="active">Add Song</Link>
             </div>
         );
     }

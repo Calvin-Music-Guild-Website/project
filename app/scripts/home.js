@@ -37,7 +37,7 @@ module.exports = React.createClass({
           return (
             <div>
               <div id="spotify">
-                <h1 id="favSongs"> Weekly Music Update </h1>
+                <h1 id="favSongs"> Weekly Music Updates </h1>
                   <SpotifyPlayer
                     uri="spotify:user:frankboye:playlist:4Aal2iBYqbMkrX64WPoNFZ"
                     size={size}

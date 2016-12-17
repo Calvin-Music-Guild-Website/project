@@ -2,8 +2,8 @@ import React from 'react';
 import $ from 'jquery';
 
 import SongList from './songList';
-import SongForm from './songForm';
 import { API_URL, POLL_INTERVAL } from './global';
+import { Link } from 'react-router';
 
 module.exports = React.createClass({
     getInitialState: function() {
@@ -45,12 +45,15 @@ module.exports = React.createClass({
         this.loadSongsFromServer();
         setInterval(this.loadSongsFromServer, POLL_INTERVAL);
     },
+    handleAdd: function() {
+        window.location = '/songForm';
+    },
     render: function() {
         return (
             <div className="songBox">
                 <h1>Songs</h1>
                 <SongList data={this.state.data} />
-                <SongForm onSongSubmit={this.handleSongSubmit} />
+                <Link to="/add" activeClassName="active">Add Song</Link>
             </div>
         );
     }

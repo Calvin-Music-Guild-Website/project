@@ -21,6 +21,7 @@ import About from './about';
 import Login from './login';
 import Register from './register';
 import App from './app';
+import SongForm from './songForm';
 import SongBox from './songBox';
 import SongEdit from './songEdit';
 import Beyonce from './beyonce';
@@ -36,6 +37,7 @@ ReactDOM.render((
             <Route path="about" component={About} />
             <Route path="login" component={Login} />
             <Route path="songs" component={SongBox} />
+            <Route path="add" component={SongForm} />
             <Route path="beyonce" component={Beyonce} />
             <Route path=":id" component={SongEdit} />
         </Route>
