@@ -1,7 +1,7 @@
 {
   "name": "simple-website-2016",
   "version": "1.0.0",
-  "description": "",
+  "description": "Code for CS 336 project with Jay Bigelow and Frank Boye, created off the code in CS 336 lab 12, which was created from a react tutorial by Pete Hunt.",
   "main": "index.js",
   "scripts": {
     "build": "npm run build-css",
@@ -47,5 +47,21 @@
   "devDependencies": {
     "nodemon": "^1.11.0",
     "webpack-dev-server": "^1.16.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/meliornox/cs336/tree/project.git"
+  },
+  "keywords": [
+    "react",
+    "song"
+  ],
+  "author": "meliornox, franksowah",
+  "bugs": {
+    "url": "https://github.com/Calvin-Music-Guild-Website/project.git"
+  },
+  "homepage": "https://github.com/Calvin-Music-Guild-Website/project.git",
+  "engines": {
+    "node": "0.12.x"
   }
 }

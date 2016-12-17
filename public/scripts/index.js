@@ -16,12 +16,12 @@ import { Router, Route, Redirect, browserHistory } from 'react-router';
 import SongBox from './songBox';
 import SongEdit from './songEdit';
 
-import '../css/base.css';
+import '../css/style.css';
 
 ReactDOM.render((
     <Router history={browserHistory}>
-        <Route path="/beyonce" component={SongBox}/>
-        <Route path="/beyonce/:id" component={SongEdit} />
+        <Route path="/beyonce.html/" component={SongBox}/>
+        <Route path="/beyonce.html/:id" component={SongEdit}/>
     </Router>
 ), document.getElementById('content')
 );

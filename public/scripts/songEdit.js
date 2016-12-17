@@ -73,29 +73,53 @@ module.exports = React.createClass({
         return (
             <div>
                 <form className="songForm">
-                    <h1>Song Edit - {this.state.id}</h1>
+                    <h1>Edit Song</h1>
+		    <div id="parent">
+		    <div class="child">
+		    <label>Song Title</label>
+		    </div>
+		    <div class="child">
                     <input
                         type="text"
                         value={this.state.title}
                         onChange={this.handleTitleChange}
                     />
+		    </div>
+		    <div class="child">
+		    <label>Artiste</label>
+		    </div>
+		    <div class="child">
                     <input
                         type="text"
                         value={this.state.artist}
                         onChange={this.handleArtistChange}
                     />
-                    <input
-                        type="text"
-                        value={this.state.lyrics}
-                        onChange={this.handleLyricsChange}
-                    />
+		    </div>
+		    <div class="child">
+		    <label>Youtube Embed Link</label>
+		    </div>
+		    <div class="child">
                     <input
                         type="text"
                         value={this.state.link}
                         onChange={this.handleLinkChange}
                     />
+		    </div>
+		    <div class="child">
+		    <label>Lyrics</label>
+		    </div>
+		    <div class="child">
+                    <input
+                        type="lyrics"
+                        value={this.state.lyrics}
+                        onChange={this.handleLyricsChange}
+                    />
+		    </div>
+		    <div class="child">
                     <button type="button" onClick={this.handleUpdate}>Update</button>
                     <button type="button" onClick={this.handleDelete}>Delete</button>
+		    </div>
+		    </div>
                 </form>
                 <Link to='/'>Cancel</Link>
             </div>
