@@ -18,8 +18,16 @@ var MongoClient2 = require('mongodb').MongoClient;
 var dbConnection;
 var dbConnection2;
 
+app.set('port', (process.env.PORT || 3000));
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
+
 app.use(logger('dev'))
-app.use('/',express.static(path.join(__dirname, 'app')));
+
+app.use('/',express.static(path.join(__dirname, 'dist')));
 
 //mongoStuff
 MongoClient.connect('mongodb://cs336:bjarne@ds151137.mlab.com:51137/cs336', function (err, db) {
@@ -38,9 +46,7 @@ MongoClient2.connect(mongoURL, function(err, dbConnection2) {
     db2 = dbConnection2;
 });
 
-app.set('port', (process.env.PORT || 3000));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
+
 
 // Additional middleware which will set headers that we need on each request.
 app.use(function(req, res, next) {

@@ -2,12 +2,13 @@
 <html>
   
 <head>
-    <title>Pop Music Guild</title>
+  <title>Pop Music Guild</title>
   <script src="https://unpkg.com/react@15.3.2/dist/react.js"></script>
   <script src="https://unpkg.com/react-dom@15.3.2/dist/react-dom.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
   <script src="https://npmcdn.com/react-router@2.4.0/umd/ReactRouter.min.js"></script>
   <script src="react-sticky.js"></script>
+  <script type="text/javascript" src="confirmPassword.js"></script>
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
   
@@ -23,6 +24,8 @@
           browserHistory,
           IndexLink,
           Link } = ReactRouter;
+
+
 
     const { StickyContainer, Sticky } = ReactSticky;
 
@@ -162,7 +165,7 @@
 
                       <div className="container" id="back">
                         <button type="button" className="cancelbtn">Cancel</button>
-                        <span className="psw">Forgot <a href="#">password?</a></span>
+                        
                       </div>
                     </form>
                 </div>
@@ -171,22 +174,25 @@
         });
 
     var Register = React.createClass({
-          render: function() {
+   render: function() {
               return (
-                <div >
+                <div id="reg" >
                   <form action="/signup" method="post">
                       <div className="container">
                         <label><b>Username</b></label>
                          <input type="text" placeholder="Enter Username" name="username" required/>
 
                         <label><b>Password</b></label>
-                        <input type="password" placeholder="Enter Password" name="password" required/>
+                        <input type="password" placeholder="Enter Password" id="password" name="password" required/>
                           
                         <label><b>Password Confirmation</b></label>
-                        <input type="password" placeholder="Confirm Password" name="password_confirmation" required/>
+                        <input type="password" placeholder="Confirm Password" id="password_confirmation" onKeyUp= checkPass(); "return false;"  name="password_confirmation" required/>
+                          <br/><span id="confirmMessage" className="confirmMessage"></span>
+                           
 
                         <button type="submit">Register</button>
                       </div>
+                      
 
                     </form>
                 </div>
