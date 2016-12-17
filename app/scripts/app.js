@@ -2,19 +2,18 @@ import { IndexLink, Link } from 'react-router';
 import React from 'react';
 import { StickyContainer, Sticky } from './react-sticky.js';
 
- 
+
+let imgUrl = '../images/pmgmain.jpg';
 const divStyle = {
   width: "100%",
   height: "600px",
   position: "relative",
-  //backgroundImage: 'url(' + imgUrl + ')',
+  backgroundImage: 'url(' + imgUrl + ')',
 };
-
-//let imgUrl = './pmgmain.jpg';
 
 module.exports = React.createClass({
       render: function() {
-        return (       
+        return (
           <div style={{ textAlign: 'center' }}>
           <StickyContainer>
             <div style={divStyle}>
@@ -27,8 +26,8 @@ module.exports = React.createClass({
                   <li><Link to="/contact" activeClassName="active">Contact</Link></li>
                   <li><Link to="/about" activeClassName="active">About</Link></li>
                   <li id="register"><Link to="/register" activeClassName="active">Register</Link></li>
-                  <li id="login"><Link to="/login" activeClassName="active">Login</Link></li>              
-             </ul>              
+                  <li id="login"><Link to="/login" activeClassName="active">Login</Link></li>
+             </ul>
             </Sticky>
             <div className="content">
               {this.props.children}
