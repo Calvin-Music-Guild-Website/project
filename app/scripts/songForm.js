@@ -32,7 +32,6 @@ module.exports = React.createClass({
     render: function() {
         return (
             <form className="songForm" onSubmit={this.handleSubmit}>
-<<<<<<< HEAD
                 <div className="titleCont">
                 <input className="titleForm" type="text" placeholder="title..."
                     value={this.state.title} onChange={this.handleTitleChange}
@@ -49,7 +48,6 @@ module.exports = React.createClass({
                     value={this.state.lyrics} onChange={this.handleLyricsChange}
                 />
                 <input className="ui-button ui-widget ui-corner-all" type="submit" value="Post" />
-=======
                 <input className="ui-widget ui-corner-all" type="text" placeholder="Title"
                     value={this.state.title} onChange={this.handleTitleChange}
                 />
@@ -63,7 +61,6 @@ module.exports = React.createClass({
                     value={this.state.link} onChange={this.handleLinkChange}
                 />
                 <button type="button" onClick={this.handleSubmit}>Add Song</button>
->>>>>>> origin/integration
             </form>
         );
     }
