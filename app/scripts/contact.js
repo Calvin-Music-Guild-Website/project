@@ -5,7 +5,7 @@ module.exports = React.createClass({
           return (
             <div>
               <h2>GOT QUESTIONS?</h2>
-              <p>Contanct us at via <a href="/login">email</a>.
+              <p>Contact Jay Bigelow or Emmanuel boye
               </p>
             </div>
           );

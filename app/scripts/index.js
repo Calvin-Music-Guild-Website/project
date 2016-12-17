@@ -15,7 +15,7 @@ import { Router, Route, IndexRoute, browserHistory, IndexLink, Link } from 'reac
 
 
 import Home from './home';
-import Artiste from './artiste';
+import Artistes from './artistes';
 import Contact from './contact';
 import About from './about';
 import Login from './login';
@@ -31,7 +31,7 @@ ReactDOM.render((
     <Router history={browserHistory}>
         <Route path="/" component={App}>
             <IndexRoute component={Home}/>
-            <Route path="artiste" component={Artiste} />
+            <Route path="artistes" component={Artistes} />
             <Route path="contact" component={Contact} />
             <Route path="about" component={About} />
             <Route path="login" component={Login} />
