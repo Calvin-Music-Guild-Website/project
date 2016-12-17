@@ -48,7 +48,7 @@ module.exports = React.createClass({
     render: function() {
         return (
             <div className="songBox">
-                <h1>Beyonce's Songs</h1>
+                <h1>Beyoncé's Songs</h1>
                 <BeyonceSongs data={this.state.data} />
                 <SongForm onSongSubmit={this.handleSongSubmit} />
             </div>
