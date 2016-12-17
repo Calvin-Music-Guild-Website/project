@@ -3,7 +3,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
     entry: [
-        __dirname + '/public/scripts/index.js'
+        __dirname + '/app/scripts/index.js'
     ],
     output: {
         path: __dirname + '/dist',
@@ -16,7 +16,7 @@ module.exports = {
         ]
     },
     plugins: [
-	new HtmlWebpackPlugin({template: __dirname + "/public/beyonce.html"}),
+	new HtmlWebpackPlugin({template: __dirname + "/app/index.tmpl.html"}),
 	new webpack.HotModuleReplacementPlugin()
     ],
     devServer: {
