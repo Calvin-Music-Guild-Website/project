@@ -18,10 +18,10 @@ module.exports = React.createClass({
                     {this.props.artist}
                 </h3>
                 <h4 className="songLink" >
-		    <iframe width="480" height="390" src={this.props.link} frameborder="0" allowfullscreen></iframe>
+		    <iframe width="600" height="390" src={this.props.link} frameborder="0" allowfullscreen></iframe>
                 </h4>
                 <span dangerouslySetInnerHTML={this.rawMarkup()} />
-		<Link to={'/' + this.props.id}>Edit</Link>
+		<Link to={'/' + this.props.id} className="EditLinkButton">Edit</Link>
             </div>
         );
     }
