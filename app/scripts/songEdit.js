@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router';
 import { hashHistory } from 'react-router';
 import $ from 'jquery';
-
 import { API_URL } from './global';
 
 module.exports = React.createClass({

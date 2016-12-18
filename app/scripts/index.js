@@ -36,6 +36,7 @@ ReactDOM.render((
             <Route path="contact" component={Contact} />
             <Route path="about" component={About} />
             <Route path="login" component={Login} />
+            <Route path="register" component={Register} />
             <Route path="songs" component={SongBox} />
             <Route path="add" component={SongForm} />
             <Route path="beyonce" component={Beyonce} />

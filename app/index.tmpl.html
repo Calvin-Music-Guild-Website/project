@@ -34,6 +34,9 @@ body {
   text-decoration: underline;
 }
 
+#songsContainer{
+  z-index: 2;
+}
 #beyonceTitle{
   color: #d9d9d9;
   position: relative;
@@ -96,11 +99,20 @@ ul.header {
   bottom: 20px;
 }
 
-.titleCont{
-  width: 50%;
-  float: right;
+input[type=text]:focus {
+    border: 3px solid #555;
+}
+#titleForm {
+  width: 25%;
 }
 
+#artisteForm {
+  width: 25%;
+}
+
+#linkForm {
+  width: 25%;
+}
 ul.header li a {
   color: #FFF;
   font-weight: bold;
@@ -108,14 +120,15 @@ ul.header li a {
   padding: 25px;
   display: inline-block;
 }
-ul.header li a:hover{
+ul.header li a:hover {
   background-color: #3ab795;
   text-decoration: underline;
   color:chartreuse;
   opacity: 0.5;
 }
+
 /* Set a style for all buttons */
-button {
+button, .postButton, #addSongButton {
     position: relative;
     font-family: 'Lato', helvetica, sans-serif;
     text-align: center;

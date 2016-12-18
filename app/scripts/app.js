@@ -1,6 +1,7 @@
 import { IndexLink, Link } from 'react-router';
 import React from 'react';
 import { StickyContainer, Sticky } from './react-sticky.js';
+import Dropdown from 'react-simple-dropdown'
 
 
 let imgUrl = '../images/pmgmain.jpg';
@@ -10,6 +11,9 @@ const divStyle = {
   position: "relative",
   backgroundImage: 'url(' + imgUrl + ')',
 };
+
+var DropdownTrigger = Dropdown.DropdownTrigger;
+var DropdownContent = Dropdown.DropdownContent;
 
 module.exports = React.createClass({
       render: function() {
@@ -22,7 +26,7 @@ module.exports = React.createClass({
             <Sticky className="foo" >
               <ul className="header">
                   <li><IndexLink to="/" activeClassName="active">Home</IndexLink></li>
-                  <li><Link to="/artistes" activeClassName="active">Arstistes</Link></li>
+                  <li><Link to="/artistes" activeClassName="active" className="dropBtn">Arstistes</Link></li>
                   <li><Link to="/contact" activeClassName="active">Contact</Link></li>
                   <li><Link to="/about" activeClassName="active">About</Link></li>
                   <li id="register"><Link to="/register" activeClassName="active">Register</Link></li>

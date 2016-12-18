@@ -9,7 +9,7 @@ module.exports = React.createClass({
           return (
             <div>
                 <h2>Artistes</h2>
-		<ul>
+		<ul className="header">
 		<li><Link to={'/songs'}>Songs</Link></li>
 		<li><Link to={'/beyonce'}>Beyonce</Link></li>
 		</ul>

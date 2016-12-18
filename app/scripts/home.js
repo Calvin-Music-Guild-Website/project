@@ -18,13 +18,13 @@ const opts = {
       }
     };
 
+//sset background image
 let imgUrl = '../images/kend.jpg';
 const divStyle = {
   width: "55%",
   height: "400",
   position: "relative",
   left: "320px",
-  opacity: "0.9",
   backgroundImage: 'url(' + imgUrl + ')',
 };
 

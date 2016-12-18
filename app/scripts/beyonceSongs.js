@@ -15,7 +15,7 @@ module.exports = React.createClass({
             );
 	    }
         });
-//	songNodes.filter( 
+//	songNodes.filter(
         return (
             <div className="songList">
                 {songNodes}
