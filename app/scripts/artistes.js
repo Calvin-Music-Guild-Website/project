@@ -1,3 +1,12 @@
+
+/* React is all about modular, composable components.
+ * About.js; component for  links artistes
+ *
+ * @author: Jay Bigelow & Emmanuel Boye
+ * @date:   11/29/16
+ *
+ */
+
 import React from 'react';
 import { Link } from 'react-router';
 

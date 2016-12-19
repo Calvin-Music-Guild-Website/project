@@ -1,3 +1,11 @@
+/* React is all about modular, composable components.
+ * AddBox.js; component add song to website/database.
+ *
+ * @author: Jay Bigelow & Emmanuel Boye
+ * @date:   11/29/16
+ *
+ */
+
 import React from 'react';
 import $ from 'jquery';
 

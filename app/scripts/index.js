@@ -1,5 +1,5 @@
 /* React is all about modular, composable components.
- *
+ * Index.js links to components and renders them
  *- SongBox
  * - SongList
  *  - Song

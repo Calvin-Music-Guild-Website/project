@@ -1,3 +1,11 @@
+/* React is all about modular, composable components.
+ * About.js; link to header component
+ *
+ * @author: Jay Bigelow & Emmanuel Boye
+ * @date:   11/29/16
+ *
+ */
+
 import { IndexLink, Link } from 'react-router';
 import React from 'react';
 import { StickyContainer, Sticky } from './react-sticky.js';
