@@ -9,7 +9,6 @@ body {
   min-height: 100%;
   font-size: 18px;
   font-family: 'Lato', helvetica, sans-serif;
-/*  background: linear-gradient(#ffb718, #e97200);*/
   text-align: center;
   z-index: 0;
 }
@@ -42,39 +41,56 @@ body {
 
 /*style labels for songs. These Labels are found in song.js*/
 #titleLabel, #artisteLabel, #lyricsLabel {
-  color: #4d4d4d;
-  font-size: 35px;
+  color: #000000;
+  font-size: 50px;
   position: relative;
   top: 10px;
   font-weight: bold;
 }
-
-#beyonceImg{
-  background-image: url('images/beyonce1.jpg');
+#lyrics{
+  font-weight: bold;
+  font-size: 30px;
+}
+#beyonceImg {
+  background-image: url('images/beyonce.jpg');
   position: relative;
   bottom: 45px;
 }
 
-#chanceImg{
+#chanceImg {
   background-image: url('images/chance.jpg');
   position: relative;
   bottom: 45px;
 }
+
+#brunoImg {
+  background-image: url('images/bruno.jpg');
+  position: relative;
+  bottom: 45px;
+}
+
+#adeleImg {
+  background-image: url('images/adele.jpg');
+  position: relative;
+  bottom: 45px;
+}
 #beyonceTitle{
-  color: #d9d9d9;
+  color: #000000;
   position: relative;
   top: 20px;
 }
 /*set title and artiste text formatting*/
 .songTitle{
-    color: #bfbfbf;
-    font-size: 25px;
+    color: #1a1a1a;
+    font-size: 30px;
     position: relative;
     top: 10px;
+    font-weight: bold;
 }
 .songArtist{
-    color: #bfbfbf;
-    font-size: 20px;
+    color: #1a1a1a;
+    font-size: 30px;
+    font-weight: bold;
 }
 
 /*style edit button*/
@@ -286,15 +302,19 @@ button {
     background-color: #f44336;
 }
 
-#back{
-   background-color:#f1f1f1;
-}
-
 /*style artiste page*/
 #artistePageCont {
   position: relative;
   right: 25%;
   text-decoration: underline;
+}
+
+/*set image for artistes page*/
+#artistesImg{
+  background-image: url('/images/mike.jpg');
+  position: relative;
+  bottom: 45px;
+  background-color: black;
 }
 
 ul.artisteHeader {
@@ -316,6 +336,8 @@ ul.artisteHeader li a:hover {
   text-decoration: underline;
   color:chartreuse;
   opacity: 0.7;
+  box-shadow: 0 20px 30px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+
 }
 
 .listOfSongs{
@@ -324,11 +346,28 @@ ul.artisteHeader li a:hover {
   bottom: 200px;
   text-align: center;
 }
+
 ul.list a {
-  background-color: #3ab795;
+  background-color: #111;
+  margin: 10px;
   color: #FFF;
   font-weight: bold;
   text-decoration: none;
+  padding: 25px;
+  display: inline-block;
+  text-align: center;
+  width: 100px;
+  position: relative;
+  bottom: 150px;
+  right: 70px;
+}
+ul.list li a:hover {
+  background-color: #3ab795;
+  text-decoration: underline;
+  color:chartreuse;
+  opacity: 0.7;
+  box-shadow: 0 20px 30px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+
 }
 /* Add padding to containers */
 .container {
@@ -348,7 +387,12 @@ ul.list a {
   padding: 0px;
   color: #000000;
 }
-
+.loginForm{
+  border: 0px;
+}
+.chancePage{
+  background-color: black;
+}
 .footer {
   position: relative;
   margin: 10px auto;
@@ -363,8 +407,11 @@ ul.list a {
   font-size: 12px;
   margin: 10;
   margin-top: 0px;
+  margin-bottom: 0;
 }
-
+.footer .content p {
+    margin-bottom: 0;
+}
 .active {
   background-color: #3ab795;
 }

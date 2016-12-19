@@ -72,7 +72,7 @@ module.exports = React.createClass({
           render: function() {
               return (
                 <div >
-                  <form action="/login" method="post">
+                  <form action="/login" method="post" className="loginForm">
 
                       <div className="container">
                         <label><b>Username</b></label>

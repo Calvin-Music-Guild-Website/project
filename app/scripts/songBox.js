@@ -53,7 +53,6 @@ module.exports = React.createClass({
             <div className="songBox">
                 <h1>Songs</h1>
                 <SongList data={this.state.data} />
-                <Link to="/add" activeClassName="active">Add Song</Link>
             </div>
         );
     }

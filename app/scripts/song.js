@@ -36,7 +36,7 @@ module.exports = React.createClass({
                   <h4 className="songLink" >
   		              <iframe width="600" height="390" src={this.props.link} frameborder="0" allowfullscreen></iframe>
                   </h4>
-                  <span dangerouslySetInnerHTML={this.rawMarkup()} />
+                  <span  id="lyrics" dangerouslySetInnerHTML={this.rawMarkup()} />
   		              <Link to={'/' + this.props.id} className="EditLinkButton">Edit</Link>
                     <Link to="/add" className="addSongLink" activeClassName="active">Add Song</Link>
               </div>

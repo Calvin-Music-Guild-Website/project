@@ -68,7 +68,7 @@ module.exports = React.createClass({
           render: function() {
               return (
                 <div >
-                  <form action="/signup" method="post">
+                  <form action="/signup" method="post" className="loginForm">
                       <div className="container">
                         <label><b>Username</b></label>
                          <input type="text" placeholder="Enter Username" name="username" required/>

@@ -7,7 +7,7 @@ import Song from './song';
 module.exports = React.createClass({
     render: function() {
         var songNodes = this.props.data.map(function(song) {
-	    if(song.artist === "Chance The Rapper"){
+	    if(song.artist === "Bruno Mars"){
             return (
                 <Song id={song.id} title={song.title} artist={song.artist} link={song.link} key={song.id}>
                     {song.lyrics}

@@ -48,10 +48,12 @@ module.exports = React.createClass({
     },
     render: function() {
         return (
+          <div className="chancePage">
             <div className="songBox" id="chanceImg">
                 <h1 id="chanceTitle">Chance The Rapper's Songs</h1>
                   <ChanceSongs data={this.state.data} />
             </div>
+          </div>
         );
     }
 });
