@@ -8,3 +8,5 @@ We are creating a website for Calvin's Pop Music Guild to showcase the artists' 
 * A page displaying artists' compositions, including the title, artist or group name, and the lyrics, with optional mp3 or Spotify link.
 
 In displaying the artists' compositions, we will implement functionality to put the most recent sumbission at the top of the page.  In order to modify the list of songs, artists would need to log in, ideally using their Calvin username and password. 
+
+This app is deployed [here] (https://pop-music-guild.herokuapp.com/)
