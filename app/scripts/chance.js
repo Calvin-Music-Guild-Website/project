@@ -1,7 +1,7 @@
 import React from 'react';
 import $ from 'jquery';
 
-import BeyonceSongs from './beyonceSongs';
+import ChanceSongs from './chanceSongs';
 import SongForm from './songForm';
 import { API_URL, POLL_INTERVAL } from './global';
 
@@ -48,9 +48,9 @@ module.exports = React.createClass({
     },
     render: function() {
         return (
-            <div className="songBox" id="beyonceImg">
-                <h1 id="beyonceTitle">Beyoncé's Songs</h1>
-                  <BeyonceSongs data={this.state.data} />
+            <div className="songBox" id="chanceImg">
+                <h1 id="chanceTitle">Chance The Rapper's Songs</h1>
+                  <ChanceSongs data={this.state.data} />
             </div>
         );
     }

@@ -35,23 +35,62 @@ body {
 }
 
 #songsContainer{
-  z-index: 2;
+  border: 1px solid #444;
+  max-width: 800px;
+  margin: 10px auto;
+}
+
+/*style labels for songs. These Labels are found in song.js*/
+#titleLabel, #artisteLabel, #lyricsLabel {
+  color: #4d4d4d;
+  font-size: 35px;
+  position: relative;
+  top: 10px;
+  font-weight: bold;
+}
+
+#beyonceImg{
+  background-image: url('images/beyonce1.jpg');
+  position: relative;
+  bottom: 45px;
+}
+
+#chanceImg{
+  background-image: url('images/chance.jpg');
+  position: relative;
+  bottom: 45px;
 }
 #beyonceTitle{
   color: #d9d9d9;
   position: relative;
   top: 20px;
 }
+/*set title and artiste text formatting*/
 .songTitle{
     color: #bfbfbf;
     font-size: 25px;
     position: relative;
     top: 10px;
 }
-
 .songArtist{
     color: #bfbfbf;
     font-size: 20px;
+}
+
+/*style edit button*/
+.EditLinkButton, .addSongLink{
+    border: 1px solid #444;
+    margin: 20px;
+    background-color: #3ab795;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+.EditLinkButton:hover, .EditLinkButton:active, .addSongLink:hover, .addSongLink:active {
+    background-color: #3ab770;
+    box-shadow: 0 20px 30px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 #page-title {
     font-size: 90px;
@@ -73,15 +112,6 @@ p {
   margin-bottom: 1.7em;
 }
 
-ul.header li {
-  display: inline;
-  list-style-type: none;
-/*  text-align: center;*/
-  margin: auto;
-
-
-}
-
 #login{
     float: right;
 
@@ -92,6 +122,13 @@ ul.header li {
 
 }
 
+#aboutText{
+  color: white;
+  position: relative;
+  top: 50px;
+}
+
+/*style header and header links*/
 ul.header {
   background-color: #111;
   padding: 0;
@@ -99,19 +136,10 @@ ul.header {
   bottom: 20px;
 }
 
-input[type=text]:focus {
-    border: 3px solid #555;
-}
-#titleForm {
-  width: 25%;
-}
-
-#artisteForm {
-  width: 25%;
-}
-
-#linkForm {
-  width: 25%;
+ul.header li {
+  display: inline;
+  list-style-type: none;
+  margin: auto;
 }
 ul.header li a {
   color: #FFF;
@@ -125,6 +153,39 @@ ul.header li a:hover {
   text-decoration: underline;
   color:chartreuse;
   opacity: 0.5;
+}
+.songForm{
+  border: 0px;
+}
+#titleForm {
+  width: 25%;
+  border: 1px solid #444;
+  border-radius: 10px;
+  box-shadow: 0 20px 30px #888888;
+}
+
+#artisteForm {
+  width: 25%;
+  border: 1px solid #444;
+  border-radius: 10px;
+  box-shadow: 0 20px 30px #888888;
+}
+
+#linkForm {
+  width: 25%;
+  border: 1px solid #444;
+  border-radius: 10px;
+  box-shadow: 0 20px 30px #888888;
+}
+.lyricsForm{
+  border: 1px solid #444;
+  border-radius: 15px;
+  box-shadow: 0 20px 30px #888888;
+
+}
+
+input[type=text]:focus {
+    border: 3px solid #555;
 }
 
 /* Set a style for all buttons */
@@ -188,10 +249,6 @@ button:after {
     transition: all 0.8s
 }
 
-/* Bordered form */
-form {
-    border: 3px solid #f1f1f1;
-}
 
 /* Full-width inputs */
 input[type=text]{
@@ -212,7 +269,6 @@ input[type=password] {
     box-sizing: border-box;
 }
 
-/* Set a style for all buttons */
 button {
     background-color: #4CAF50;
     color: white;
@@ -234,6 +290,46 @@ button {
    background-color:#f1f1f1;
 }
 
+/*style artiste page*/
+#artistePageCont {
+  position: relative;
+  right: 25%;
+  text-decoration: underline;
+}
+
+ul.artisteHeader {
+  padding: 0;
+  position: relative;
+  top: 5px;
+}
+ul.artisteHeader li a {
+  background-color: #111;
+  margin: 10px;
+  color: #FFF;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 25px;
+  display: inline-block;
+}
+ul.artisteHeader li a:hover {
+  background-color: #3ab795;
+  text-decoration: underline;
+  color:chartreuse;
+  opacity: 0.7;
+}
+
+.listOfSongs{
+  position: relative;
+  left: 25%;
+  bottom: 200px;
+  text-align: center;
+}
+ul.list a {
+  background-color: #3ab795;
+  color: #FFF;
+  font-weight: bold;
+  text-decoration: none;
+}
 /* Add padding to containers */
 .container {
     padding: 16px;

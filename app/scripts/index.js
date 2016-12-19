@@ -25,6 +25,7 @@ import SongForm from './songForm';
 import SongBox from './songBox';
 import SongEdit from './songEdit';
 import Beyonce from './beyonce';
+import Chance from './chance';
 
 import '../css/style.css';
 
@@ -40,6 +41,7 @@ ReactDOM.render((
             <Route path="songs" component={SongBox} />
             <Route path="add" component={SongForm} />
             <Route path="beyonce" component={Beyonce} />
+            <Route path="chance" component={Chance} />
             <Route path=":id" component={SongEdit} />
         </Route>
     </Router>

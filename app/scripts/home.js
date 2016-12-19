@@ -18,7 +18,7 @@ const opts = {
       }
     };
 
-//sset background image
+//set background image
 let imgUrl = '../images/kend.jpg';
 const divStyle = {
   width: "55%",
@@ -47,16 +47,19 @@ module.exports = React.createClass({
               </div>
               <div  id="homeContent">
                 <p>
-                  The Pop Music Guild Website was build be Jay Bigelow and Emmanuel Boye.
+                  The Pop Music Guild Website was built by Jay Bigelow and Emmanuel Boye.
                   This website was built as a final project for <strong>cs336: Web development. </strong>
-                  Everything you see on this page was built in reactJS with css styling.
+                  Everything you see on this page was built in reactJS with CSS styling.
                   I, personally, am very proud of this page. I have learned A LOT. Building this website.
-                  This website initially started out in raw HTML till we realized we could probably get a C on it.
+                  This website initially started out in raw HTML and CSS till we realized we could probably get a C on it.
                   <strong>LOL (VanderLinden wishes) </strong>
                   I think the page has a few cool features.
-                  <ul> <strong>This spotify player is pretty rad right!?</strong></ul>
-                  React, even though it sucks (like a lot), has some cool features.
-                  Organizing code into components for one I think is very cool.
+
+                  <ul> <strong>The spotify player is pretty rad right!?</strong></ul>
+
+                  REACT, even though it sucks (like a lot), has some cool features.
+                  Organizing stuff into components for one I think is very cool. No need to scroll allthe way down
+                  to find code to change.
                 </p>
                 <div style = {divStyle}></div>
 
@@ -68,8 +71,6 @@ module.exports = React.createClass({
                   />
                   </div>
 
-
-
                 <p>As we go further down you do realize that the navigation bar sticks at the top...right?
                 That was fairly easy to implement with react. But some other things were a but annoying.
                 Like, putting a picture on your website. Trust me. It is very annoying.
@@ -80,10 +81,10 @@ module.exports = React.createClass({
                 .... Why do I type all this you may ask. Well I just feel so proud about that sticky header, and I just
                 want to show it off.
                 </p>
-
                 </div>
 
-              <p>Duis a turpis sed lacus dapibus elementum sed eu lectus.</p>
+              <p>"Everything is permitted, Nothing is true."</p>
+
               <div className="footer">
                   <p>Copyright © Eventually something fancy will be put here with all those registered icons® and those things  </p>
               </div>

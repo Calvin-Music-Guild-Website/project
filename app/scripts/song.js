@@ -24,17 +24,21 @@ module.exports = React.createClass({
           <div>
             <div id="songsContainer">
               <div className="song" >
+                <label id="titleLabel">Title</label>
                   <h2 className="songTitle" >
                       {this.props.title}
                   </h2>
+                  <label id="artisteLabel">Artiste</label>
                   <h3 className="songArtist" >
                       {this.props.artist}
                   </h3>
+                  <label id="lyricsLabel">Media/Lyrics</label>
                   <h4 className="songLink" >
   		              <iframe width="600" height="390" src={this.props.link} frameborder="0" allowfullscreen></iframe>
                   </h4>
                   <span dangerouslySetInnerHTML={this.rawMarkup()} />
   		              <Link to={'/' + this.props.id} className="EditLinkButton">Edit</Link>
+                    <Link to="/add" className="addSongLink" activeClassName="active">Add Song</Link>
               </div>
             </div>
           </div>

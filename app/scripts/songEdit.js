@@ -79,7 +79,7 @@ module.exports = React.createClass({
 		    <label>Song Title</label>
 		    </div>
 		    <div class="child">
-                    <input
+                    <input id="titleForm"
                         type="text"
                         value={this.state.title}
                         onChange={this.handleTitleChange}
@@ -89,7 +89,7 @@ module.exports = React.createClass({
 		    <label>Artiste</label>
 		    </div>
 		    <div class="child">
-                    <input
+                    <input id="artisteForm"
                         type="text"
                         value={this.state.artist}
                         onChange={this.handleArtistChange}
@@ -100,7 +100,7 @@ module.exports = React.createClass({
 		    </div>
 		    <div class="child">
                     <input
-                        type="text"
+                        type="text" id="linkForm"
                         value={this.state.link}
                         onChange={this.handleLinkChange}
                     />
@@ -109,19 +109,19 @@ module.exports = React.createClass({
 		    <label>Lyrics</label>
 		    </div>
 		    <div class="child">
-                    <input
+                    <textarea rows="30" cols="155"
                         type="lyrics"
                         value={this.state.lyrics}
                         onChange={this.handleLyricsChange}
                     />
 		    </div>
 		    <div class="child">
-                    <button type="button" onClick={this.handleUpdate}>Update</button>
-                    <button type="button" onClick={this.handleDelete}>Delete</button>
+                    <button type="button" id="addSongButton" onClick={this.handleUpdate}>Update</button>
+                    <button type="button" id="addSongButton" onClick={this.handleDelete}>Delete</button>
 		    </div>
 		    </div>
                 </form>
-                <button onClick={this.context.router.goBack}>Back</button>
+                <button id="addSongButton" onClick={this.context.router.goBack}>Back</button>
             </div>
         );
     }
