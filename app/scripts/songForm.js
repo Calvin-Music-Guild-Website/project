@@ -32,23 +32,22 @@ module.exports = React.createClass({
     render: function() {
         return (
             <form className="songForm" onSubmit={this.handleSubmit}>
-                    <input type="text" id="titleForm" placeholder="title..."
+                    <input type="text" id="titleForm" placeholder="Title"
                         value={this.state.title} onChange={this.handleTitleChange}
                     />
-                    <input type="text" id="artisteForm" placeholder="artist..."
+                    <input type="text" id="artisteForm" placeholder="Artist"
                         value={this.state.artist} onChange={this.handleArtistChange}
                     />
 
-                    <input type="text" id="linkForm" placeholder="link..."
+                    <input type="text" id="linkForm" placeholder="Youtube Embed Link"
                         value={this.state.link} onChange={this.handleLinkChange}
                     />
 
 
 
-                <textarea rows="30" cols="155" className="lyricsForm" type="text" placeholder="lyrics..."
+                <textarea rows="30" cols="155" className="lyricsForm" type="text" placeholder="Lyrics"
                     value={this.state.lyrics} onChange={this.handleLyricsChange}/>
 
-                // <input className="postButton" type="submit" value="Post" />
                 <button type="button"  id="addSongButton" onClick={this.handleSubmit}>Add Song</button>
                 </form>
 
