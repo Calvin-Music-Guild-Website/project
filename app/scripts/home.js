@@ -1,3 +1,11 @@
+/* React is all about modular, composable components.
+ * About.js; component for home page
+ *
+ * @author: Jay Bigelow & Emmanuel Boye
+ * @date:   11/29/16
+ *
+ */
+
 import React from 'react';
 import SpotifyPlayer from 'react-spotify-player';
 import YouTube from 'react-youtube';

@@ -1,3 +1,11 @@
+/* React is all about modular, composable components.
+ * About.js; component for to show artistes' songs
+ *
+ * @author: Jay Bigelow & Emmanuel Boye
+ * @date:   11/29/16
+ *
+ */
+
 import React from 'react';
 import $ from 'jquery';
 

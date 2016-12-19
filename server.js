@@ -1,4 +1,4 @@
-/*
+/* node.js server for our website
  * @author: Jay Bigelow, Frank Boye
  * @date:   12/11/16
  *
@@ -78,7 +78,7 @@ function checkIfLoggedIn(req, res, next){
         // so that the 'requireUser' middleware can check if the user is
         // logged in
         req.user = user;
-        
+
         // Set a res.locals variable called 'user' so that it is available
         // to every handlebars template.
         res.locals.user = user;
@@ -88,7 +88,7 @@ function checkIfLoggedIn(req, res, next){
   } else {
     next();
   }
-}      
+}
 
 // Use this so we can get access to `req.body` in our posted login
 // and signup forms.
@@ -207,7 +207,7 @@ function createUser(username, password, password_confirmation, callback){
      }else {
         var query      = {username:username};
         var userObject = {username: username, password: password};
-         
+
          // make sure this username does not exist already
     coll.findOne(query, function(err, user){
       if (user) {
@@ -229,12 +229,12 @@ app.post('/signup', function(req, res){
   var username = req.body.username;
   var password = req.body.password;
   var password_confirmation = req.body.password_confirmation;
-  
+
   createUser(username, password, password_confirmation, function(err, user){
       // This way subsequent requests will know the user is logged in.
       req.session.username = user.username;
-      
-      res.redirect('/');  
+
+      res.redirect('/');
 });
 });
 
@@ -242,7 +242,7 @@ app.post('/signup', function(req, res){
 // were given.
 function authenticateUser(username, password, callback){
   var coll = dbConnection.collection('users');
-  
+
   coll.findOne({username: username, password:password}, function(err, user){
     callback(err, user);
   });
@@ -253,7 +253,7 @@ app.post('/login', function(req, res){
   // the views/login.hbs page
   var username = req.body.username;
   var password = req.body.password;
-  
+
   authenticateUser(username, password, function(err, user){
     if (user) {
       // This way subsequent requests will know the user is logged in.

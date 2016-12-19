@@ -1,3 +1,11 @@
+/* React is all about modular, composable components.
+ * About.js; component for registration page
+ *
+ * @author: Jay Bigelow & Emmanuel Boye
+ * @date:   11/29/16
+ *
+ */
+
 import React from 'react';
 
 module.exports = React.createClass({

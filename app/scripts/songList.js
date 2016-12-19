@@ -1,3 +1,11 @@
+/* React is all about modular, composable components.
+ * About.js; component  to pull songs from database
+ *
+ * @author: Jay Bigelow & Emmanuel Boye
+ * @date:   11/29/16
+ *
+ */
+
 import React from 'react';
 import $ from 'jquery';
 import Remarkable from 'remarkable';
