@@ -5,7 +5,7 @@
  *  - Song
  * - SongForm
  *
- * @author: Jay Bigelow
+ * @author: Jay Bigelow & Emmanuel Boye
  * @date:   11/29/16
  *
  */
@@ -28,6 +28,8 @@ import Beyonce from './beyonce';
 import Chance from './chance';
 import BrunoMars from './brunoMars';
 import Adele from './adele';
+import AddBox from './addBox';
+
 
 import '../css/style.css';
 
@@ -41,7 +43,7 @@ ReactDOM.render((
             <Route path="login" component={Login} />
             <Route path="register" component={Register} />
             <Route path="songs" component={SongBox} />
-            <Route path="add" component={SongForm} />
+            <Route path="add" component={AddBox} />
             <Route path="beyonce" component={Beyonce} />
             <Route path="chance" component={Chance} />
             <Route path="brunoMars" component={BrunoMars} />

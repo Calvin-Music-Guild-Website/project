@@ -76,7 +76,7 @@ module.exports = React.createClass({
                 Like, putting a picture on your website. Trust me. It is very annoying.
                 We managed to get very BASIC login and registration stuff to work on our website, YouTube plugins,
                 and im still thinking of interesting things to add. Jay did a good job with the react code Facebook gave us.
-                She integrated it, and im trying to style it more. We worked seperately on different stuff (AGILE woohoo!)
+                He integrated it, and im trying to style it more. We worked seperately on different stuff (AGILE woohoo!)
                 , and then came togeher to integrate both files.
                 .... Why do I type all this you may ask. Well I just feel so proud about that sticky header, and I just
                 want to show it off.
