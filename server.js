@@ -1,4 +1,4 @@
-/*
+/* node.js server for our website
  * @author: Jay Bigelow, Frank Boye
  * @date:   12/11/16
  *
@@ -7,15 +7,6 @@
 var express = require('express')
   , logger = require('morgan')
   , app = express();
-  //, template = require('jade').compileFile(__dirname + '/source/templates/homepagecontent.jade')
-//  try {
-//    var html = template({ title: 'Home' })
-//    res.send(html)
-//  } catch (e) {
-//    next(e)
-//  }
-//})
-
 var fs = require('fs');
 var path = require('path');
 var expressSession = require('express-session');
@@ -28,9 +19,7 @@ var dbConnection;
 var dbConnection2;
 
 app.use(logger('dev'))
-//app.use(express.static(__dirname + '/static'))
-
-app.use(express.static(path.join(__dirname, 'public')));
+app.use('/',express.static(path.join(__dirname, 'dist')));
 
 //mongoStuff
 MongoClient.connect('mongodb://cs336:bjarne@ds151137.mlab.com:51137/cs336', function (err, db) {
@@ -39,8 +28,9 @@ MongoClient.connect('mongodb://cs336:bjarne@ds151137.mlab.com:51137/cs336', func
 })
 
 //Set using export MONGO_PASSWORD=password
-var PASSWORD = process.env.MONGO_PASSWORD;
-var mongoURL = 'mongodb://user:' + PASSWORD + '@ds159737.mlab.com:59737/cs336project';
+//var PASSWORD = process.env.MONGO_PASSWORD;
+//var mongoURL = 'mongodb://user:' + PASSWORD + '@ds159737.mlab.com:59737/cs336project';
+var mongoURL = 'mongodb://user:test@ds159737.mlab.com:59737/cs336project';
 
 var db2;
 MongoClient2.connect(mongoURL, function(err, dbConnection2) {
@@ -54,11 +44,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 // Additional middleware which will set headers that we need on each request.
 app.use(function(req, res, next) {
-    // Set permissive CORS header - this allows this server to be used only as
-    // an API server in conjunction with something like webpack-dev-server.
     res.setHeader('Access-Control-Allow-Origin', '*');
-
-    // Disable caching so we'll always get the latest comments.
     res.setHeader('Cache-Control', 'no-cache');
     next();
 });
@@ -92,7 +78,7 @@ function checkIfLoggedIn(req, res, next){
         // so that the 'requireUser' middleware can check if the user is
         // logged in
         req.user = user;
-        
+
         // Set a res.locals variable called 'user' so that it is available
         // to every handlebars template.
         res.locals.user = user;
@@ -102,7 +88,7 @@ function checkIfLoggedIn(req, res, next){
   } else {
     next();
   }
-}      
+}
 
 // Use this so we can get access to `req.body` in our posted login
 // and signup forms.
@@ -126,20 +112,9 @@ app.use(checkIfLoggedIn);
 app.engine('hbs', expressHbs({textname:'hbs', defaultLayout:'main.hbs'}));
 app.set('view engine', 'hbs');
 
-//app.get('/', function(req, res){
-//  var coll = dbConnection.collection('users');
-//    coll.find({}).toArray(function(err, users){
-//    res.render('index', {users:users});  
-//  })
+//app.get('/login', function(req, res){
+//  res.render('login');
 //});
-
-//app.get('/', function(req, res){
-//    res.render('/index.html');  
-//});
-
-app.get('/login', function(req, res){
-  res.render('login');
-});
 
 app.get('/logout', function(req, res){
   delete req.session.username;
@@ -232,7 +207,7 @@ function createUser(username, password, password_confirmation, callback){
      }else {
         var query      = {username:username};
         var userObject = {username: username, password: password};
-         
+
          // make sure this username does not exist already
     coll.findOne(query, function(err, user){
       if (user) {
@@ -254,12 +229,12 @@ app.post('/signup', function(req, res){
   var username = req.body.username;
   var password = req.body.password;
   var password_confirmation = req.body.password_confirmation;
-  
+
   createUser(username, password, password_confirmation, function(err, user){
       // This way subsequent requests will know the user is logged in.
       req.session.username = user.username;
-      
-      res.redirect('/');  
+
+      res.redirect('/');
 });
 });
 
@@ -267,7 +242,7 @@ app.post('/signup', function(req, res){
 // were given.
 function authenticateUser(username, password, callback){
   var coll = dbConnection.collection('users');
-  
+
   coll.findOne({username: username, password:password}, function(err, user){
     callback(err, user);
   });
@@ -278,7 +253,7 @@ app.post('/login', function(req, res){
   // the views/login.hbs page
   var username = req.body.username;
   var password = req.body.password;
-  
+
   authenticateUser(username, password, function(err, user){
     if (user) {
       // This way subsequent requests will know the user is logged in.
@@ -291,7 +266,7 @@ app.post('/login', function(req, res){
     }
   });
 });
-
+//app.use('*', express.static('app'));
 app.listen(process.env.PORT || 3000, function () {
 console.log('Listening on http://localhost:' + (process.env.PORT || 3000))
 })

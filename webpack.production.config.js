@@ -4,7 +4,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
     entry: [
-        __dirname + '/public/scripts/index.js'
+        __dirname + '/app/scripts/index.js'
     ],
     output: {
         path: __dirname + '/dist',
@@ -25,7 +25,7 @@ module.exports = {
                 'NODE_ENV': JSON.stringify('production')
             }
         }),
-        new HtmlWebpackPlugin({template: __dirname + "/public/index.tmpl.html"}),
+        new HtmlWebpackPlugin({template: __dirname + "/app/index.tmpl.html"}),
         new webpack.optimize.OccurenceOrderPlugin(),
         new webpack.optimize.UglifyJsPlugin(),
         new ExtractTextPlugin("[name]-[hash].css")
