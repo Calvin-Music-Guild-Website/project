@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+  
+<head>
+  <script src="https://unpkg.com/react@15.3.2/dist/react.js"></script>
+  <script src="https://unpkg.com/react-dom@15.3.2/dist/react-dom.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+  <script src="https://npmcdn.com/react-router@2.4.0/umd/ReactRouter.min.js"></script>
+  <script src="react-sticky.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+  
+<body>
+  
+  <div id="container">
+  </div>
+  
+  <script type="text/babel">
+
+    var { Router,
+          Route,
+          IndexRoute,
+          IndexLink,
+          Link } = ReactRouter;
+
+    const { StickyContainer, Sticky } = ReactSticky;
+
+    let imgUrl = 'images/pmgmain.jpg'; 
+
+    const divStyle = {
+      width: "100%",
+      height: "500px",
+      backgroundImage: 'url(' + imgUrl + ')',
+    };
+
+     
+    var destination = document.querySelector("#container");
+
+    var App = React.createClass({
+      render: function() {
+        return (       
+          <div style={{ textAlign: 'center' }}>
+          <StickyContainer>
+            <div style={{ divStyle }}>
+              <p>Start Scrolling!</p>
+            </div>
+            <Sticky className="foo" >
+              <header>
+                <h1 className="pull-left">react-sticky | basic demo</h1>
+                <div className="pull-right">
+                  <a href="http://www.captivationsoftware.com" target="_blank">
+                    <img src="http://www.captivationsoftware.com/images/logo-white.png" className="hidden-xs hidden-sm" alt="Captivation Software" />
+                    <img src="http://www.captivationsoftware.com/images/symbol-white.png" className="hidden-md hidden-lg" alt="Captivation Software" />
+                  </a>
+                </div>
+              </header>
+            </Sticky>
+            <div style={{ fontSize: 40, fontWeight: 'bold' }}>
+              <p>Keep Going!</p>
+              <p>Still More!</p>
+              <p>Not Done Yet!</p>
+              <p>The End Is Near...</p>
+            </div>
+          </StickyContainer>
+          <div style={{ backgroundColor: '#fff' }}>
+            <p>
+              Okay, Now Scroll Back Up!<br />
+              <small>(Oh, and check the console too...)</small>
+            </p>
+          </div>
+        </div>
+        )
+      }
+    });
+
+    var Home = React.createClass({
+      render: function() {
+          return (
+            <div>
+              <h2>HELLO</h2>
+              <p>Cras facilisis urna ornare ex volutpat, et
+              convallis erat elementum. Ut aliquam, ipsum vitae
+              gravida suscipit, metus dui bibendum est, eget rhoncus nibh
+              metus nec massa. Maecenas hendrerit laoreet augue
+              nec molestie. Cum sociis natoque penatibus et magnis
+              dis parturient montes, nascetur ridiculus mus.</p>
+
+              <p>Duis a turpis sed lacus dapibus elementum sed eu lectus.</p>
+            </div>
+          );
+        }
+    });
+
+    var Artiste = React.createClass({
+      render: function() {
+          return (
+            <div>
+              <h2>GOT QUESTIONS?</h2>
+              <p>The easiest thing to do is post on
+              our <a href="http://forum.kirupa.com">forums</a>.
+              </p>
+            </div>
+          );
+        }
+    });
+
+    var Contact = React.createClass({
+      render: function() {
+          return (
+            <div>
+              <h2>GOT QUESTIONS?</h2>
+              <p>The easiest thing to do is post on
+              our <a href="http://forum.kirupa.com">forums</a>.
+              </p>
+            </div>
+          );
+        }
+    });
+    
+
+    var About = React.createClass({
+          render: function() {
+              return (
+                <div>
+                  <h2>HELLO</h2>
+                  <p>Cras facilisis urna ornare ex volutpat, et
+                  convallis erat elementum. Ut aliquam, ipsum vitae
+                  gravida suscipit, metus dui bibendum est, eget rhoncus nibh
+                  metus nec massa. Maecenas hendrerit laoreet augue
+                  nec molestie. Cum sociis natoque penatibus et magnis
+                  dis parturient montes, nascetur ridiculus mus.</p>
+
+                  <p>Duis a turpis sed lacus dapibus elementum sed eu lectus.</p>
+                </div>
+              );
+            }
+        });
+
+
+    ReactDOM.render(
+      <Router>
+        <Route path="/" component={App}>
+            <IndexRoute component={Home}/>
+            <Route path="artiste" component={Artiste} />
+            <Route path="contact" component={Contact} />
+            <Route path="about" component={About} />
+        </Route>
+      </Router>,
+      destination
+    );
+  </script>
+</body>
+  
+</html>
